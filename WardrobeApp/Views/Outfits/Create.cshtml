@@ -1,0 +1,115 @@
+﻿@model WardrobeApp.Content.Outfit
+
+@{
+    ViewBag.Title = "Create";
+}
+
+@*<h2>Create</h2>*@
+
+
+        <div class="row">
+            <a href="#menu.toggledR" class="btn btn-default" id="menu-toggleR">Toggle SlideShow</a>
+            <hr />
+        </div>
+
+
+
+@*<div id="sidebar-wrapperR">
+        <ul class="sidebar-nav">
+            <li class="sidebar-brand">
+                <a href="">SlideShow</a>
+            </li> <!--end sidebar-brand-->
+
+        </ul> <!--end sidebar-nav -->
+    </div> <!--end sidebar-wrapper-->*@
+
+
+
+
+<!--Side Bar/Slideshow-->
+@*<div id="sidebar-wrapper">
+    <ul class="sidebar-nav">
+        <li class="sidebar-brand">
+            <a href="">My Closet</a>
+        </li> <!--end sidebar-brand-->
+        <li class="dropdown">
+            <a href="" class="dropdown-toggle" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Closet <span class="caret"></span> </a>
+            <ul class="dropdown-menu">
+                <li><a href="@Url.Action("Create","WardrobeItems")"> <i class="fa fa-angle-double-right"></i>Add to closet</a></li>
+                <li><a href="@Url.Action("Index","WardrobeItems")"> <i class="fa fa-angle-double-right"></i>Enter closet</a></li>
+            </ul>
+        </li>
+
+        <!--Outfit submenu-->
+        <li class="dropdown">
+            <a href="" class="dropdown-toggle" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Outfits <span class="caret"></span> </a>
+            <ul class="dropdown-menu">
+                <li><a href="@Url.Action("Create","Outfits")"> <i class="fa fa-angle-double-right"></i>New Outfit</a></li>
+                <li><a href="@Url.Action("Index","Outfits")"> <i class="fa fa-angle-double-right"></i>Saved Outfits</a></li>
+            </ul>
+        </li>
+
+
+    </ul> <!--end sidebar-nav -->
+</div> <!--end sidebar-wrapper-->*@
+
+<!--Outfit -->
+
+
+
+@*@using (Html.BeginForm()) 
+{
+    @Html.AntiForgeryToken()
+    
+    <div class="form-horizontal">
+        <h4>Outfit</h4>
+        <hr />
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        <div class="form-group">
+            @Html.LabelFor(model => model.TopID, "TopID", htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.DropDownList("TopID", null, htmlAttributes: new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.TopID, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.BottomId, "BottomId", htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.DropDownList("BottomId", null, htmlAttributes: new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.BottomId, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.ShoeID, "ShoeID", htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.DropDownList("ShoeID", null, htmlAttributes: new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.ShoeID, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Create" class="btn btn-default" />
+            </div>
+        </div>
+    </div>
+}*@
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}
+    <!-- Menu Toggle Script -->
+@*<script>
+        $("#menu-toggleR").click(function (e) {
+            e.preventDefault();
+            $("#wrapper").toggleClass("toggled");
+        });
+</script>*@
+
+

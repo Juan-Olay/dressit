@@ -1,0 +1,114 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - My ASP.NET Application</title>
+    <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css">
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+</head>
+<body>
+    <!--<div class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                @Html.ActionLink("Application name", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+            </div>
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                    <li>@Html.ActionLink("Home", "Index", "Home")</li>
+                    <li>@Html.ActionLink("About", "About", "Home")</li>
+                    <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
+                </ul>
+            </div>
+        </div>
+    </div>-->
+    
+    <!--     <div class="container body-content">   -->
+    <div id="wrapper">
+        <!--SideBar-->
+        <div id="sidebar-wrapper">
+            <ul class="sidebar-nav">
+                <li class="sidebar-brand">
+                    <a href="">My Closet</a>
+                </li> <!--end sidebar-brand-->
+                <li class="dropdown">
+                    <a href="" class="dropdown-toggle" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Closet <span class="caret"></span> </a>
+                    <ul class="dropdown-menu">
+                        <li><a href="@Url.Action("Create","WardrobeItems")"> <i class="fa fa-angle-double-right"></i>Add to closet</a></li>
+                        <li><a href="@Url.Action("Index","WardrobeItems")"> <i class="fa fa-angle-double-right"></i>Enter closet</a></li>
+                    </ul>
+                </li>
+
+                <!--Outfit submenu-->
+                <li class="dropdown">
+                    <a href="" class="dropdown-toggle" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Outfits <span class="caret"></span> </a>
+                    <ul class="dropdown-menu">
+                        <li><a href="@Url.Action("Create","Outfits")"> <i class="fa fa-angle-double-right"></i>New Outfit</a></li>
+                        <li><a href="@Url.Action("Index","Outfits")"> <i class="fa fa-angle-double-right"></i>Saved Outfits</a></li>
+                    </ul>
+                </li>
+
+
+            </ul> <!--end sidebar-nav -->
+        </div> <!--end sidebar-wrapper-->
+
+        <!--SlideShow Sidebar-->
+        <div id="sidebar-wrapperR">
+            <ul class="sidebar-nav">
+                <li class="sidebar-brand">
+                    <a href="">SlideShow</a>
+                </li> <!--end sidebar-brand-->
+
+            </ul> <!--end sidebar-nav -->
+        </div> <!--end sidebar-wrapper-->
+
+
+
+
+
+
+        <div id="page-content-wrapper">
+            <div class="container-fluid">
+                <div class="row">
+                    <a href="#menu.toggled" class="btn btn-default" id="menu-toggle">Toggle Menu</a>
+                    <hr />
+                </div>
+                @RenderBody()
+
+            </div>
+        </div>
+
+
+        <!--<footer>
+            <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>
+        </footer>-->
+    </div>
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+
+    <!-- Menu Toggle Script -->
+    <script>
+        $("#menu-toggle").click(function (e) {
+            e.preventDefault();
+            $("#wrapper").toggleClass("toggled");
+        });
+    </script>
+
+    <!-- Menu Toggle Script -->
+    <script>
+        $("#menu-toggleR").click(function (i) {
+            i.preventDefault();
+            $("#sidebar-wrapperR").toggleClass("toggledR");
+        });
+    </script>
+
+</body>
+</html>
