@@ -12,13 +12,13 @@
 <table class="table">
     <tr>
         <th>
-            @Html.DisplayNameFor(model => model.Top.Name)
+            Top
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.Bottom.Name)
+            Bottom
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.Shoes.Name)
+            Shoes
         </th>
         <th>
             Accessories
@@ -29,7 +29,8 @@
 @foreach (var item in Model) {
     <tr>
         <td>
-            @Html.DisplayFor(modelItem => item.Top.Name)
+            @*@Html.DisplayFor(modelItem => item.Top.Name)*@
+            @item.Top.Name
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.Bottom.Name)
@@ -40,7 +41,7 @@
         <td>
             @foreach (var accessory in item.Accessories)
             {
-                @Html.DisplayFor(modelItem => accessory);
+                @Html.DisplayFor(modelItem => accessory.Name);
             }
         </td>
         <td>
